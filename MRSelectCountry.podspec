@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MRSelectCountry"
-  s.version      = "0.1"
+  s.version      = "0.1.0"
   s.summary      = "Easy way to get country data which includes country name and dial code for iOS Developers"
 
   # This description is used to generate tags and improve search results.
@@ -24,8 +24,8 @@ Pod::Spec.new do |s|
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  s.description  = <<-DESC
-                   DESC
+#s.description  = <<-DESC
+#                   DESC
 
   s.homepage     = "https://github.com/mrazam110/MRSelectCountry"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
@@ -79,7 +79,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "http://github.com/mrazam110/MRSelectCountry.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/mrazam110/MRSelectCountry.git", :tag => "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
