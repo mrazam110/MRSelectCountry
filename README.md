@@ -31,8 +31,8 @@ pod 'MRSelectCountry'
 ## How to Use
 
 ````swift
-    let controller = MRSelectCountry.getMRSelectCountryController(delegate: self)
-    self.navigationController?.pushViewController(controller, animated: true)
+let controller = MRSelectCountry.getMRSelectCountryController(delegate: self)
+self.navigationController?.pushViewController(controller, animated: true)
 ````
 
 ### Delegate Method
@@ -50,10 +50,10 @@ func didSelectCountry(controller: MRSelectCountryTableViewController, country: M
 
 ## Questions & Help
 
-Use [Issues](https://github.com/mrazam110/MRSelectCounttry/issues) for that. Before asking a question, see if it has already been answered
+Use [Issues](https://github.com/mrazam110/MRSelectCountry/issues) for that. Before asking a question, see if it has already been answered
 
 ## License
 
-`MRSelectCountry` is released under [MIT License](https://github.com/mrazam110/MRSelectCounttry/blob/master/LICENSE)
+`MRSelectCountry` is released under [MIT License](https://github.com/mrazam110/MRSelectCountry/blob/master/LICENSE)
 
 *Please provide attribution, it is greatly appreciated*
