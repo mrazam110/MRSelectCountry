@@ -8,6 +8,8 @@
 
 import UIKit
 
+let MRSELECTCOUNTRYCONTROLLER_IDENTIFIER = "MRSelectCountryTableViewController"
+
 class MRSelectCountryTableViewController: UITableViewController, UISearchBarDelegate {
     
     // MARK :- IBOutlets
@@ -16,8 +18,8 @@ class MRSelectCountryTableViewController: UITableViewController, UISearchBarDele
     
     // MARK :- Properties
     
-    private var countries: [Country] = []
-    private var filteredCountries: [Country] = []
+    private var countries: [MRCountry] = []
+    private var filteredCountries: [MRCountry] = []
     private var isFiltering = false
     public var delegate: MRSelectCountryDelegate?
     
@@ -40,8 +42,8 @@ class MRSelectCountryTableViewController: UITableViewController, UISearchBarDele
     
     // MARK: - Supporting functions
     
-    private func getCountries() -> [Country] {
-        var countries = [Country]()
+    private func getCountries() -> [MRCountry] {
+        var countries = [MRCountry]()
         if let path = Bundle.main.url(forResource: "countries", withExtension: "json") {
             
             do {
@@ -49,7 +51,7 @@ class MRSelectCountryTableViewController: UITableViewController, UISearchBarDele
                 do {
                     if let jsonResult = try JSONSerialization.jsonObject(with: jsonData, options: JSONSerialization.ReadingOptions(rawValue: 0)) as? NSArray {
                         for arrData in jsonResult {
-                            let country = Country(json: arrData as! [String: Any])
+                            let country = MRCountry(json: arrData as! [String: Any])
                             countries.append(country)
                         }
                     }
@@ -86,7 +88,7 @@ class MRSelectCountryTableViewController: UITableViewController, UISearchBarDele
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MRSelectCountryTableViewCell
         
         // Configure the cell...
-        var country: Country
+        var country: MRCountry
         if isFiltering {
             country = filteredCountries[indexPath.row]
         }else{
@@ -102,7 +104,7 @@ class MRSelectCountryTableViewController: UITableViewController, UISearchBarDele
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var selectedCountry: Country!
+        var selectedCountry: MRCountry!
         if isFiltering {
             selectedCountry = filteredCountries[indexPath.row]
         }else{

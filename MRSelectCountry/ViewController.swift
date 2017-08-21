@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController, MRSelectCountryDelegate {
 
+    @IBOutlet weak var selectCountryButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -22,15 +24,17 @@ class ViewController: UIViewController, MRSelectCountryDelegate {
 
     @IBAction func buttonClicked(_ sender: Any) {
         let storyboard = UIStoryboard(name: "MRSelectCountry", bundle: Bundle.main)
-        let controller = storyboard.instantiateViewController(withIdentifier: "MRSelectCountryTableViewController") as! MRSelectCountryTableViewController
+        let controller = storyboard.instantiateViewController(withIdentifier: MRSELECTCOUNTRYCONTROLLER_IDENTIFIER) as! MRSelectCountryTableViewController
         controller.delegate = self
         
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
-    func didSelectCountry(controller: MRSelectCountryTableViewController, country: Country) {
+    func didSelectCountry(controller: MRSelectCountryTableViewController, country: MRCountry) {
         print(country.description)
         controller.navigationController?.popViewController(animated: true)
+        
+        selectCountryButton.setTitle("\(country.code) \(country.dialCode)", for: .normal)
     }
 
 }

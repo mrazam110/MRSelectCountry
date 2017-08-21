@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Select Country Table View Controller-->
+        <!--Select Country-->
         <scene sceneID="raG-10-48z">
             <objects>
-                <tableViewController storyboardIdentifier="MRSelectCountryTableViewController" id="k5S-ea-HDC" customClass="MRSelectCountryTableViewController" customModule="MRSelectCountry" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="MRSelectCountryTableViewController" title="Select Country" id="k5S-ea-HDC" customClass="MRSelectCountryTableViewController" customModule="MRSelectCountry" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="61" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ea1-hC-yCF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -1,5 +1,5 @@
 //
-//  Country.swift
+//  MRCountry.swift
 //  MRSelectCountry
 //
 //  Created by Muhammad Raza on 09/08/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class Country: NSObject {
+public class MRCountry: NSObject {
 
     public var name: String
     public var dialCode: String
@@ -25,7 +25,7 @@ public class Country: NSObject {
     }
     
     override public var description: String {
-        return "name = \(name)\ndial code = \(dialCode)\ncode=\(code)\nlocale\(String(describing: locale))"
+        return "name = \(name)\ndial code = \(dialCode)\ncode = \(code)\nlocale = \(String(describing: locale))"
     }
     
 }

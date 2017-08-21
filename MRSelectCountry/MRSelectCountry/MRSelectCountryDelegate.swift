@@ -9,5 +9,5 @@
 import UIKit
 
 protocol MRSelectCountryDelegate {
-    func didSelectCountry(controller: MRSelectCountryTableViewController, country: Country)
+    func didSelectCountry(controller: MRSelectCountryTableViewController, country: MRCountry)
 }
