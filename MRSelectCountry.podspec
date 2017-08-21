@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MRSelectCountry"
-  s.version      = "0.2.0"
+  s.version      = "0.2.1"
   s.summary      = "Easy way to get country data which includes country name and dial code for iOS Developers"
 
   # This description is used to generate tags and improve search results.
