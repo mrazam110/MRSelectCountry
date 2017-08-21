@@ -8,6 +8,6 @@
 
 import UIKit
 
-protocol MRSelectCountryDelegate {
+public protocol MRSelectCountryDelegate {
     func didSelectCountry(controller: MRSelectCountryTableViewController, country: MRCountry)
 }

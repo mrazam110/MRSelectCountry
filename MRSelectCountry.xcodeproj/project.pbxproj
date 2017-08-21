@@ -15,6 +15,7 @@
 		2711C8151F3AD76300509B9C /* MRSelectCountryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2711C8141F3AD76300509B9C /* MRSelectCountryTests.swift */; };
 		2711C8201F3AD76300509B9C /* MRSelectCountryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2711C81F1F3AD76300509B9C /* MRSelectCountryUITests.swift */; };
 		2718E7701F3C1DE500EFED7B /* MRSelectCountryDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2718E76F1F3C1DE500EFED7B /* MRSelectCountryDelegate.swift */; };
+		275B19061F4AE2B0001C2B7B /* MRSelectCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B19051F4AE2B0001C2B7B /* MRSelectCountry.swift */; };
 		27A085E91F3AEF9400A177B7 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 27A085E81F3AEF9400A177B7 /* countries.json */; };
 		27A085EB1F3AEF9F00A177B7 /* MRCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A085EA1F3AEF9F00A177B7 /* MRCountry.swift */; };
 		27A085ED1F3AEFAD00A177B7 /* MRSelectCountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A085EC1F3AEFAD00A177B7 /* MRSelectCountryTableViewCell.swift */; };
@@ -54,6 +55,7 @@
 		2711C81F1F3AD76300509B9C /* MRSelectCountryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MRSelectCountryUITests.swift; sourceTree = "<group>"; };
 		2711C8211F3AD76300509B9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2718E76F1F3C1DE500EFED7B /* MRSelectCountryDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MRSelectCountryDelegate.swift; path = MRSelectCountry/MRSelectCountryDelegate.swift; sourceTree = "<group>"; };
+		275B19051F4AE2B0001C2B7B /* MRSelectCountry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MRSelectCountry.swift; path = MRSelectCountry/MRSelectCountry.swift; sourceTree = "<group>"; };
 		27A085E81F3AEF9400A177B7 /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = countries.json; path = MRSelectCountry/countries.json; sourceTree = "<group>"; };
 		27A085EA1F3AEF9F00A177B7 /* MRCountry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MRCountry.swift; path = MRSelectCountry/MRCountry.swift; sourceTree = "<group>"; };
 		27A085EC1F3AEFAD00A177B7 /* MRSelectCountryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MRSelectCountryTableViewCell.swift; path = MRSelectCountry/MRSelectCountryTableViewCell.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 		2711C82D1F3AD76800509B9C /* MRSelectCountryTableViewController */ = {
 			isa = PBXGroup;
 			children = (
+				275B19051F4AE2B0001C2B7B /* MRSelectCountry.swift */,
 				2711C83D1F3AE6FB00509B9C /* Controller and storyboard */,
 				2711C83A1F3ADD9E00509B9C /* Delegate */,
 				2711C8391F3AD9FD00509B9C /* Table View Cell */,
@@ -357,6 +360,7 @@
 				27A085F31F3AF07100A177B7 /* MRSelectCountryTableViewController.swift in Sources */,
 				2711C8001F3AD76300509B9C /* AppDelegate.swift in Sources */,
 				27A085ED1F3AEFAD00A177B7 /* MRSelectCountryTableViewCell.swift in Sources */,
+				275B19061F4AE2B0001C2B7B /* MRSelectCountry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,7 +515,7 @@
 				INFOPLIST_FILE = MRSelectCountry/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mastermaterial.MRSelectCountry;
+				PRODUCT_BUNDLE_IDENTIFIER = org.cocoapods.MRSelectCountry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -524,7 +528,7 @@
 				INFOPLIST_FILE = MRSelectCountry/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mastermaterial.MRSelectCountry;
+				PRODUCT_BUNDLE_IDENTIFIER = org.cocoapods.MRSelectCountry;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
