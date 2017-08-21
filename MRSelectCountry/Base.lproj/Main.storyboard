@@ -41,6 +41,8 @@
                     <navigationItem key="navigationItem" id="yOJ-Ds-Abl">
                         <barButtonItem key="backBarButtonItem" title=" " id="RGI-q6-HiP"/>
                     </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="selectCountryButton" destination="1jh-XT-qJS" id="y5y-03-kdf"/>
                     </connections>
