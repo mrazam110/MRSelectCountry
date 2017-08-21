@@ -9,6 +9,7 @@
 import UIKit
 
 let MRSELECTCOUNTRYCONTROLLER_IDENTIFIER = "MRSelectCountryTableViewController"
+let STORYBOARD_NAME = "MRSelectCountry"
 
 class MRSelectCountryTableViewController: UITableViewController, UISearchBarDelegate {
     

@@ -23,7 +23,7 @@ class ViewController: UIViewController, MRSelectCountryDelegate {
     }
 
     @IBAction func buttonClicked(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "MRSelectCountry", bundle: Bundle.main)
+        let storyboard = UIStoryboard(name: STORYBOARD_NAME, bundle: Bundle.main)
         let controller = storyboard.instantiateViewController(withIdentifier: MRSELECTCOUNTRYCONTROLLER_IDENTIFIER) as! MRSelectCountryTableViewController
         controller.delegate = self
         
