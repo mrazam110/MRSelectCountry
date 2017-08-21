@@ -24,7 +24,6 @@ class ViewController: UIViewController, MRSelectCountryDelegate {
 
     @IBAction func buttonClicked(_ sender: Any) {
         let controller = MRSelectCountry.getMRSelectCountryController(delegate: self)
-        
         self.navigationController?.pushViewController(controller, animated: true)
     }
     

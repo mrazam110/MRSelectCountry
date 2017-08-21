@@ -31,11 +31,8 @@ pod 'MRSelectCountry'
 ## How to Use
 
 ````swift
-let storyboard = UIStoryboard(name: STORYBOARD_NAME, bundle: Bundle.main)
-let controller = storyboard.instantiateViewController(withIdentifier: MRSELECTCOUNTRYCONTROLLER_IDENTIFIER) as! MRSelectCountryTableViewController
-controller.delegate = self
-
-self.navigationController?.pushViewController(controller, animated: true)
+    let controller = MRSelectCountry.getMRSelectCountryController(delegate: self)
+    self.navigationController?.pushViewController(controller, animated: true)
 ````
 
 ### Delegate Method
@@ -43,11 +40,11 @@ self.navigationController?.pushViewController(controller, animated: true)
 You can use `MRSelectCountryDelegate` to get selected country
 ````swift
 func didSelectCountry(controller: MRSelectCountryTableViewController, country: MRCountry) {
-// Get country data
-print(country.description)
+    // Get country data
+    print(country.description)
 
-// Dismiss/Pop the MRSelectCountryTableViewController
-controller.navigationController?.popViewController(animated: true)
+    // Dismiss/Pop the MRSelectCountryTableViewController
+    controller.navigationController?.popViewController(animated: true)
 }
 ````
 
