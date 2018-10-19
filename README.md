@@ -12,7 +12,7 @@ Easy way to get country data which includes country name and dial code for iOS D
 
 ## Requirements
 
-* iOS 9.0+
+* iOS 10.0+
 
 ## Installation
 
