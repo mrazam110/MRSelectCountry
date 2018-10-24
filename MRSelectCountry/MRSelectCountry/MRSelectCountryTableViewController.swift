@@ -16,7 +16,7 @@ public class MRSelectCountryTableViewController: UITableViewController, UISearch
     
     private var countries: [MRCountry] = []
     private var filteredCountries: [MRCountry] = []
-    public var delegate: MRSelectCountryDelegate?
+    public weak var delegate: MRSelectCountryDelegate? = nil
     
     private let searchController = UISearchController(searchResultsController: nil)
     
