@@ -1,0 +1,16 @@
+PODS:
+  - MRSelectCountry (1.0)
+
+DEPENDENCIES:
+  - MRSelectCountry
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - MRSelectCountry
+
+SPEC CHECKSUMS:
+  MRSelectCountry: 3cb86c9eaabca9d93db2ddddf3e8b584a0aca293
+
+PODFILE CHECKSUM: 39ed583eece09f65a3c55feed496a918964044fd
+
+COCOAPODS: 1.5.0
