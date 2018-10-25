@@ -1,5 +1,5 @@
 # MRSelectCountry
-Easy way to get country data which includes country name and dial code for iOS Developers
+An easy way to get country data which includes the country name and dial code for iOS Developers
 
 ![License](https://img.shields.io/cocoapods/l/MRSelectCountry.svg) 
 ![Platform](https://img.shields.io/cocoapods/p/MRSelectCountry.svg)
