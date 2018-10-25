@@ -14,7 +14,7 @@ public class MRSelectCountryTableViewController: UITableViewController, UISearch
     
     // MARK :- Properties
     
-    private var countries: [MRCountry] = []
+    private(set) var countries: [MRCountry] = []
     private var filteredCountries: [MRCountry] = []
     public weak var delegate: MRSelectCountryDelegate? = nil
     
@@ -26,7 +26,7 @@ public class MRSelectCountryTableViewController: UITableViewController, UISearch
         super.viewDidLoad()
         
         // Get Countries
-        countries = getCountries()
+        countries = MRSelectCountry.getCountries()
         
         // Remove extra seperator lines
         tableView.tableFooterView = UIView(frame: .zero)
@@ -36,30 +36,6 @@ public class MRSelectCountryTableViewController: UITableViewController, UISearch
     }
     
     // MARK: - Supporting functions
-    
-    private func getCountries() -> [MRCountry] {
-        var countries = [MRCountry]()
-        let bundle = Bundle(identifier: "org.cocoapods.MRSelectCountry")
-        if let path = bundle?.url(forResource: "countries", withExtension: "json") {
-            
-            do {
-                let jsonData = try Data(contentsOf: path, options: .mappedIfSafe)
-                do {
-                    if let jsonResult = try JSONSerialization.jsonObject(with: jsonData, options: JSONSerialization.ReadingOptions(rawValue: 0)) as? NSArray {
-                        for arrData in jsonResult {
-                            let country = MRCountry(json: arrData as! [String: Any])
-                            countries.append(country)
-                        }
-                    }
-                } catch let error as NSError {
-                    print("Error: \(error)")
-                }
-            } catch let error as NSError {
-                print("Error: \(error)")
-            }
-        }
-        return countries
-    }
     
     private func setupSearchController() {
         // Setup the Search Controller

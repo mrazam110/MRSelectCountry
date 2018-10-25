@@ -28,7 +28,7 @@ class ViewController: UIViewController, MRSelectCountryDelegate {
     }
     
     func didSelectCountry(controller: MRSelectCountryTableViewController, country: MRCountry) {
-        print(country.description)
+        debugPrint(country)
         controller.navigationController?.popViewController(animated: true)
         
         selectCountryButton.setTitle("\(country.code) \(country.dialCode)", for: .normal)
