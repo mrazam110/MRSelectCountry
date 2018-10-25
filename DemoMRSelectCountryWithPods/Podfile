@@ -6,6 +6,6 @@ target 'DemoMRSelectCountryWithPods' do
   use_frameworks!
 
   # Pods for DemoMRSelectCountryWithPods'
-pod 'MRSelectCountry'
+pod 'MRSelectCountry', '~> 1.0.4'
 
 end
