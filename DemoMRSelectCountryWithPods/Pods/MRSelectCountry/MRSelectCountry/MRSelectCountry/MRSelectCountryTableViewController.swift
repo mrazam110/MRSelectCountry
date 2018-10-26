@@ -8,18 +8,17 @@
 
 import UIKit
 
-public class MRSelectCountryTableViewController: UITableViewController, UISearchBarDelegate {
+public class MRSelectCountryTableViewController: UITableViewController, UISearchResultsUpdating, UISearchControllerDelegate {
     
     // MARK :- IBOutlets
     
-    @IBOutlet weak var searchBar: UISearchBar!
-    
     // MARK :- Properties
     
-    private var countries: [MRCountry] = []
+    private(set) var countries: [MRCountry] = []
     private var filteredCountries: [MRCountry] = []
-    private var isFiltering = false
-    public var delegate: MRSelectCountryDelegate?
+    public weak var delegate: MRSelectCountryDelegate? = nil
+    
+    private let searchController = UISearchController(searchResultsController: nil)
     
     // MARK: - UIViewController Lifecycle methods
     
@@ -27,36 +26,34 @@ public class MRSelectCountryTableViewController: UITableViewController, UISearch
         super.viewDidLoad()
         
         // Get Countries
-        countries = getCountries()
+        countries = MRSelectCountry.getCountries()
         
         // Remove extra seperator lines
-        tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        tableView.tableFooterView = UIView(frame: .zero)
+        
+        // Setup Search controller
+        setupSearchController()
     }
     
     // MARK: - Supporting functions
     
-    private func getCountries() -> [MRCountry] {
-        var countries = [MRCountry]()
-        let bundle = Bundle(identifier: "org.cocoapods.MRSelectCountry")
-        if let path = bundle?.url(forResource: "countries", withExtension: "json") {
-            
-            do {
-                let jsonData = try Data(contentsOf: path, options: .mappedIfSafe)
-                do {
-                    if let jsonResult = try JSONSerialization.jsonObject(with: jsonData, options: JSONSerialization.ReadingOptions(rawValue: 0)) as? NSArray {
-                        for arrData in jsonResult {
-                            let country = MRCountry(json: arrData as! [String: Any])
-                            countries.append(country)
-                        }
-                    }
-                } catch let error as NSError {
-                    print("Error: \(error)")
-                }
-            } catch let error as NSError {
-                print("Error: \(error)")
-            }
+    private func setupSearchController() {
+        // Setup the Search Controller
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.placeholder = "Search"
+        searchController.delegate = self
+        searchController.hidesNavigationBarDuringPresentation = true
+        searchController.obscuresBackgroundDuringPresentation = true
+        
+        if #available(iOS 11.0, *) {
+            navigationItem.hidesSearchBarWhenScrolling = false
+            searchController.dimsBackgroundDuringPresentation = false // default is YES
+            navigationItem.searchController = searchController
+        } else {
+            // Fallback on earlier versions
+            tableView.tableHeaderView = searchController.searchBar
         }
-        return countries
+        definesPresentationContext = true
     }
     
     // MARK: - IBActions
@@ -71,7 +68,7 @@ public class MRSelectCountryTableViewController: UITableViewController, UISearch
 
     override public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        if isFiltering {
+        if isFiltering() {
             return filteredCountries.count
         }
         return countries.count
@@ -83,7 +80,7 @@ public class MRSelectCountryTableViewController: UITableViewController, UISearch
         
         // Configure the cell...
         var country: MRCountry
-        if isFiltering {
+        if isFiltering() {
             country = filteredCountries[indexPath.row]
         }else{
             country = countries[indexPath.row]
@@ -99,7 +96,7 @@ public class MRSelectCountryTableViewController: UITableViewController, UISearch
     
     override public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var selectedCountry: MRCountry!
-        if isFiltering {
+        if isFiltering() {
             selectedCountry = filteredCountries[indexPath.row]
         }else{
             selectedCountry = countries[indexPath.row]
@@ -108,26 +105,10 @@ public class MRSelectCountryTableViewController: UITableViewController, UISearch
         self.delegate?.didSelectCountry(controller: self, country: selectedCountry)
     }
     
-    // MARK :- UISearchBar Delegate
+    // MARK: - UISearchController
     
-    public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if searchBar.text != nil && self.searchBar.text != "" {
-            isFiltering = true
-            filterCountry(text: searchBar.text!)
-        }else{
-            isFiltering = false
-            tableView.reloadData()
-        }
-    }
-    
-    public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchBar.text! != "" {
-            isFiltering = true
-            filterCountry(text: searchBar.text!)
-        }else{
-            isFiltering = false
-            tableView.reloadData()
-        }
+    public func updateSearchResults(for searchController: UISearchController) {
+        filterCountry(text: searchController.searchBar.text!)
     }
     
     private func filterCountry(text: String) {
@@ -135,6 +116,15 @@ public class MRSelectCountryTableViewController: UITableViewController, UISearch
             return country.name.lowercased().contains(text.lowercased()) || country.code.lowercased().contains(text.lowercased()) || country.dialCode.lowercased().contains(text.lowercased())
         })
         tableView.reloadData()
+    }
+    
+    private func searchBarIsEmpty() -> Bool {
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    private func isFiltering() -> Bool {
+        let searchBarScopeIsFiltering = searchController.searchBar.selectedScopeButtonIndex != 0
+        return searchController.isActive && (!searchBarIsEmpty() || searchBarScopeIsFiltering)
     }
 
 }

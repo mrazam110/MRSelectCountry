@@ -321,39 +321,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		07F2F43DD5FB33F5FA5D06043B9153FD /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B27F4AC33F82EDB593CF13C68A92108D /* MRSelectCountry.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/MRSelectCountry/MRSelectCountry-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MRSelectCountry/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/MRSelectCountry/MRSelectCountry.modulemap";
-				PRODUCT_MODULE_NAME = MRSelectCountry;
-				PRODUCT_NAME = MRSelectCountry;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		0E12B7268EF0862DFEEB8B6B0BD7C9F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -417,6 +384,39 @@
 			};
 			name = Debug;
 		};
+		229D0DA2A9B99B6BE484C9FBA5A29BB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B27F4AC33F82EDB593CF13C68A92108D /* MRSelectCountry.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MRSelectCountry/MRSelectCountry-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MRSelectCountry/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MRSelectCountry/MRSelectCountry.modulemap";
+				PRODUCT_MODULE_NAME = MRSelectCountry;
+				PRODUCT_NAME = MRSelectCountry;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		4031D8BC1271343162B3939905AE58C9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 274EFAED6CA9B4DEC41DD92830302DED /* Pods-DemoMRSelectCountryWithPods.release.xcconfig */;
@@ -453,10 +453,11 @@
 			};
 			name = Release;
 		};
-		5F9DDF04DAA757929F5F869384A97C07 /* Debug */ = {
+		80595C63FA375624F91588F353570219 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B27F4AC33F82EDB593CF13C68A92108D /* MRSelectCountry.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -469,7 +470,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/MRSelectCountry/MRSelectCountry-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/MRSelectCountry/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/MRSelectCountry/MRSelectCountry.modulemap";
 				PRODUCT_MODULE_NAME = MRSelectCountry;
@@ -477,13 +478,14 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		B90B5DC2C5F5F4D0F2229A250E6A212C /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -603,8 +605,8 @@
 		F91E30E2C1620DE739242A8AA7B38C62 /* Build configuration list for PBXNativeTarget "MRSelectCountry" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5F9DDF04DAA757929F5F869384A97C07 /* Debug */,
-				07F2F43DD5FB33F5FA5D06043B9153FD /* Release */,
+				229D0DA2A9B99B6BE484C9FBA5A29BB3 /* Debug */,
+				80595C63FA375624F91588F353570219 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

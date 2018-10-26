@@ -1,5 +1,5 @@
 # MRSelectCountry
-Easy way to get country data which includes country name and dial code for iOS Developers
+An easy way to get country data which includes the country name and dial code for iOS Developers
 
 ![License](https://img.shields.io/cocoapods/l/MRSelectCountry.svg) 
 ![Platform](https://img.shields.io/cocoapods/p/MRSelectCountry.svg)
@@ -12,7 +12,7 @@ Easy way to get country data which includes country name and dial code for iOS D
 
 ## Requirements
 
-* iOS 9.0+
+* iOS 10.0+
 
 ## Installation
 
@@ -31,8 +31,8 @@ pod 'MRSelectCountry'
 ## How to Use
 
 ````swift
-    let controller = MRSelectCountry.getMRSelectCountryController(delegate: self)
-    self.navigationController?.pushViewController(controller, animated: true)
+let controller = MRSelectCountry.getMRSelectCountryController(delegate: self)
+self.navigationController?.pushViewController(controller, animated: true)
 ````
 
 ### Delegate Method
@@ -50,10 +50,10 @@ func didSelectCountry(controller: MRSelectCountryTableViewController, country: M
 
 ## Questions & Help
 
-Use [Issues](https://github.com/mrazam110/MRSelectCounttry/issues) for that. Before asking a question, see if it has already been answered
+Use [Issues](https://github.com/mrazam110/MRSelectCountry/issues) for that. Before asking a question, see if it has already been answered
 
 ## License
 
-`MRSelectCountry` is released under [MIT License](https://github.com/mrazam110/MRSelectCounttry/blob/master/LICENSE)
+`MRSelectCountry` is released under [MIT License](https://github.com/mrazam110/MRSelectCountry/blob/master/LICENSE)
 
 *Please provide attribution, it is greatly appreciated*

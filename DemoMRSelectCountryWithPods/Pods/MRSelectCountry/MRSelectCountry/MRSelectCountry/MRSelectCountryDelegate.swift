@@ -6,8 +6,8 @@
 //  Copyright © 2017 Muhammad Raza. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-public protocol MRSelectCountryDelegate {
+public protocol MRSelectCountryDelegate: class {
     func didSelectCountry(controller: MRSelectCountryTableViewController, country: MRCountry)
 }

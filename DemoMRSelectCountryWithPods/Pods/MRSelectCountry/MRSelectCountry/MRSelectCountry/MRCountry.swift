@@ -8,24 +8,27 @@
 
 import UIKit
 
-public class MRCountry: NSObject {
+public struct MRCountry {
 
-    public var name: String
-    public var dialCode: String
-    public var code: String
-    public var locale: String?
+    private(set) var name: String
+    private(set) var dialCode: String
+    private(set) var code: String
+    private(set) var locale: String?
     
-    init(json: [String: Any]){
+    public init(json: [String: Any]) {
         self.name = json["name"] as! String
         self.dialCode = json["dial_code"] as! String
         self.code = json["code"] as! String
         self.locale = json["locale"] as? String
-        
-        super.init()
     }
+}
+
+extension MRCountry: Equatable {
     
-    override public var description: String {
-        return "name = \(name)\ndial code = \(dialCode)\ncode = \(code)\nlocale = \(String(describing: locale))"
+    public static func == (lhs: MRCountry, rhs: MRCountry) -> Bool {
+        return lhs.name == rhs.name
+            && lhs.dialCode == rhs.dialCode
+            && lhs.code == rhs.code
+            && lhs.locale == rhs.locale
     }
-    
 }
